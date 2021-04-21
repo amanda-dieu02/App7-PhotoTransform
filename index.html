@@ -143,12 +143,12 @@
       </script> <!--End of script for the first canvas-->
 
       <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Canvas tag for second canvas.-->
-      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+      <script> /* This script initiates the second canvas and puts the text on the canvas "dataCanvas" */
         var canvas2 = document.getElementById('dataCanvas');
-        var context = canvas2.getContext("2d");
-        context.font = '20pt Times New Roman';
-        context.fillStyle = "black";
-        context.fillText("Transformed image will go here", 10, 20); 
+        var context2 = canvas2.getContext("2d");
+        context2.font = '20pt Times New Roman';
+        context2.fillStyle = "black";
+        context2.fillText("Transformed image will go here", 10, 20); 
       </script> <!--End of script for the second canvas-->
      
     </div><!-- /content -->
