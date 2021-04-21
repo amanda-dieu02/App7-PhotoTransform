@@ -141,7 +141,13 @@
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
        
-    
+     <canvas id="secondCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById('secondCanvas');
+        var context = canvas.getContext("2d");
+        context.font = '20pt Times New Roman';
+        context.fillStyle = "black";
+        context.fillText("Transformed image will go here", 10, 20);
       </script>
 
     </div><!-- /content -->
