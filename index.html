@@ -126,24 +126,34 @@
     <div data-role="header">
     <h1>Primary Colors</h1></div><!-- /header -->
     <div data-role="content">	
-      <h2>Push button to take picture.</h2>
+      <h2>Push button to take picture.</h2> <!--This is the instruction for the user (if using a phone) to press the button to take a picture so that they can load it onto their canvas. -->
       <div>
-        Press orange button to create or choose image file:
+        Press orange button to create or choose image file: <!--This is the instruction for the user to press the button in order to load an already saved image onto the canvas. -->
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
       </div>
+     
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Canvas tag for original canvas.-->
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
         context.font = '20pt Times New Roman';
         context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20);
-       
-      </script>
+        context.fillText("Original image will go here", 10, 20); 
+      </script> <!--End of script for the first canvas-->
 
+      <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Canvas tag for second canvas.-->
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById('dataCanvas');
+        var context = canvas2.getContext("2d");
+        context.font = '20pt Times New Roman';
+        context.fillStyle = "black";
+        context.fillText("Transformed image will go here", 10, 20); 
+      </script> <!--End of script for the second canvas-->
+     
     </div><!-- /content -->
+  
     <div data-role="footer" data-position="fixed">
       <p>DIY Diagnostics</p>
     </div><!-- /footer -->
