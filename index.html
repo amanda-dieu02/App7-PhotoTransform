@@ -27,7 +27,7 @@
   The goal of this code is to upload an image and do a pixel-by-pixel transformation on a copy of the image with only blue intensities. 
  
   Known Issues:
-  I struggled at first with the instructions. 
+  I struggled at first with the instructions and setting up RBG. 
 -->
 
  <head>
@@ -102,7 +102,7 @@
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
          
-         //gets pixel data from the context (image)
+         //gets pixel data from the context (image) on the second canvas starting at the origin of (0,0) and then extending through the images height and width
         var imageData = context2.getImageData (0,0, img.naturalWidth, img.naturalHeight); 
         var data = imageData.data;
         
@@ -136,27 +136,27 @@
      
       <div id="messageDisplayArea"></div>
       
-      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Canvas tag for original canvas.-->
+      <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Canvas tag for original canvas, sets first canvas to be identified as "myCanvas", with its dimensions and border.-->
       <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
-        var canvas = document.getElementById('myCanvas');
-        var context = canvas.getContext("2d");
-        context.font = '20pt Times New Roman';
-        context.fillStyle = "black";
-        context.fillText("Original image will go here", 10, 20); 
+        var canvas = document.getElementById('myCanvas'); //Calls a function, if any, to run on the canvas
+        var context = canvas.getContext("2d"); //Calls up the context of the canvas, which is in 2d
+        context.font = '20pt Times New Roman'; //Sets font of text 
+        context.fillStyle = "black"; //Sets color of text 
+        context.fillText("Original image will go here", 10, 20); //Sets the actual text that will show up in first canvas along with where on the canvas.
       </script> <!--End of script for the first canvas-->
 
-      <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Canvas tag for second canvas.-->
+      <canvas id="dataCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas> <!--Canvas tag for second canvas,sets second canvas to be identified as "dataCanvas", with it dimensions and border-->
       <script> /* This script initiates the second canvas and puts the text on the canvas "dataCanvas" */
-        var canvas2 = document.getElementById('dataCanvas');
-        var context2 = canvas2.getContext("2d");
-        context2.font = '20pt Times New Roman';
-        context2.fillStyle = "black";
-        context2.fillText("Transformed image will go here", 10, 20); 
+        var canvas2 = document.getElementById('dataCanvas'); //Calls a function, if any, to run on the second
+        var context2 = canvas2.getContext("2d"); //Sets up new context variable for the second canvas
+        context2.font = '20pt Times New Roman'; //Sets font of text for second canvas
+        context2.fillStyle = "black"; //Sets color of text for second canvas
+        context2.fillText("Transformed image will go here", 10, 20); //Actual text to show up on the second canvas
       </script> <!--End of script for the second canvas-->
      
     </div><!-- /content -->
   
-    <div data-role="footer" data-position="fixed">
+    <div data-role="footer" data-position="fixed"> <!--Footer that appears at the bottom of the page.-->
       <p>DIY Diagnostics</p>
     </div><!-- /footer -->
   </div><!-- /page -->
