@@ -101,9 +101,11 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
+        var canvas2=document.getElementById('dataCanvas');
+        var context2=canvas2.getContext("2d");
          
          //gets pixel data from the context (image) on the second canvas starting at the origin of (0,0) and then extending through the images height and width
-        var imageData = context2.getImageData (0,0, img.naturalWidth, img.naturalHeight); 
+        var imageData = context.getImageData (0,0, 600, 500); 
         var data = imageData.data;
         
         for(var i=0, n=data.length; i < n; i+=4){
